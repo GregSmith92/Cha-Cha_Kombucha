@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_160509) do
-
+ActiveRecord::Schema.define(version: 2019_05_16_141515) do
+  
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,10 +31,6 @@ ActiveRecord::Schema.define(version: 2019_05_16_160509) do
     t.bigint "kombucha_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "shipping_address"
-    t.string "card_number"
     t.index ["kombucha_id"], name: "index_transactions_on_kombucha_id"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
