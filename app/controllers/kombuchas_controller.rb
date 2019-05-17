@@ -3,6 +3,11 @@ class KombuchasController < ApplicationController
     @kombuchas = policy_scope(Kombucha)
   end
 
+  def all_kombuchas
+    @kombuchas = Kombucha.all
+    authorize @kombuchas
+  end
+
   def show
     @kombucha = Kombucha.find(params[:id])
     authorize @kombucha
