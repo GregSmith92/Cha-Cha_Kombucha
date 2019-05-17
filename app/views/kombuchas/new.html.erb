@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Create a new kombucha</h1>
+
+      <%= simple_form_for @kombucha do |f| %>
+        <%= f.input :name %>
+        <%= f.input :price %>
+        <%= f.input :rating %>
+        <%= f.input :flavour %>
+        <%= f.input :photo %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
