@@ -2,6 +2,7 @@
 
 <h1>Ready to Cha Cha Kambucha?!</h1>
 
-
-<%= link_to "View My Kombuchas", kombuchas_path, class:"btn btn-primary" %>
-<%= link_to "View All Kombuchas", all_path, class:"btn btn-info" %>
+<% if current_user %>
+  <%= link_to "View My Kombuchas", dashboard_path, class:"btn btn-primary" %>
+<% end %>
+<%= link_to "View All Kombuchas", kombuchas_path, class:"btn btn-info" %>
