@@ -5,7 +5,7 @@
       <p><%= @kombucha.price %></p>
       <p><%= @kombucha.rating %></p>
       <p><%= @kombucha.flavour %></p>
-      <p><%= @kombucha.photo %></p>
+      <%= cl_image_tag @kombucha.photo, height: 200, width: 300, crop: :fill %>
      <!--  <form action="">
       <div class="input-group">
         <input type="submit" value="Buy this Kombucha" class="btn btn-success mt-2" style="width: 100%">
