@@ -11,6 +11,7 @@ class KombuchasController < ApplicationController
 
   def new
     @kombucha = Kombucha.new
+    authorize @kombucha
   end
 
   def create

@@ -1,7 +1,6 @@
 class TransactionsController < ApplicationController
 
   def new
-    raise
     @transaction = Transaction.new
     @kombucha = Kombucha.find(params[:kombucha_id])
     authorize @transaction

@@ -9,6 +9,10 @@ class KombuchaPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   def new?
     true
   end
@@ -17,9 +21,6 @@ class KombuchaPolicy < ApplicationPolicy
     true
   end
 
-  def show?
-    true
-  end
 
   def update?
     record.user == user
