@@ -10,6 +10,11 @@
       <div class="input-group">
         <input type="submit" value="Buy this Kombucha" class="btn btn-success mt-2" style="width: 100%">
       </form> -->
+      <h3>Buy your Cha-Cha Kombucha</h3>
+      <%= simple_form_for [@kombucha, @transaction] do |f| %>
+          <%= f.input :quantity %>
+          <%= f.submit "Buy your Kombucha", class: "btn btn-primary" %>
+      <% end %>
       <%= link_to "Back to all kombuchas", root_path %>
     </div>
   </div>
