@@ -5,23 +5,15 @@ class KombuchaPolicy < ApplicationPolicy
     end
 
     def show?
-      return true
-    end
-
-    def new?
-      return true
+      true
     end
 
     def create?
-      return true
-    end
-
-    def edit?
-      record.user == user
+      true
     end
 
     def update?
-      edit?
+      record.user == user
     end
 
     def destroy?
