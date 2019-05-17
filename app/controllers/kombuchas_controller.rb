@@ -12,9 +12,8 @@ class KombuchasController < ApplicationController
   end
 
   def create
-    @user = current_user
     @kombucha = Kombucha.new(kombucha_params)
-    @kombucha.user = @user
+    @kombucha.user = current_user
     if @kombucha.save
       redirect_to kombucha_path(@kombucha)
     else
@@ -45,6 +44,6 @@ class KombuchasController < ApplicationController
   private
 
   def kombucha_params
-    params_require(:kombucha).permit(:name, :price, :rating, :flavour, :photo)
+    params.require(:kombucha).permit(:name, :price, :rating, :flavour, :photo)
   end
 end
