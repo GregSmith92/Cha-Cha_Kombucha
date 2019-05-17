@@ -9,6 +9,10 @@ class KombuchaPolicy < ApplicationPolicy
     true
   end
 
+  def all_kombuchas?
+    true
+  end
+
   def show?
     true
   end
