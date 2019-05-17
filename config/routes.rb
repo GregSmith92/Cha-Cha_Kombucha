@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "kombuchas#index"
+  root to: "pages#home"
   devise_for :users
   resources :kombuchas do
     resources :transactions, only: [:new, :create]
