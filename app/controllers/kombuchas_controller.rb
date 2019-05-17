@@ -32,6 +32,7 @@ class KombuchasController < ApplicationController
 
   def edit
     @kombucha = Kombucha.find(params[:id])
+    authorize @kombucha
   end
 
   def update
