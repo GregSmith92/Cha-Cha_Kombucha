@@ -2,8 +2,21 @@
   <div class="row">
     <div class="col-xs-12">
       <h1><%= @kombucha.name %></h1>
-      <%= link_to "Back to all kombuchas", root_path %>
+      <p><%= @kombucha.price %></p>
+      <p><%= @kombucha.rating %></p>
+      <p><%= @kombucha.flavour %></p>
+      <p><%= @kombucha.photo %></p>
+     <!--  <form action="">
+      <div class="input-group">
+        <input type="submit" value="Buy this Kombucha" class="btn btn-success mt-2" style="width: 100%">
+      </form> -->
+      <h3>Buy your Cha-Cha Kombucha</h3>
+      <%= simple_form_for(@kombucha, :url =>  new_kombucha_transaction_path(kombucha_id: @kombucha.id), :method => :get) do |f| %>
+          <%= f.input :quantity %>
+          <%= f.submit "Buy your Kombucha", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
+
 
