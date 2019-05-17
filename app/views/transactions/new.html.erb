@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Fill out your Cha-Cha Kombucha checkout form</h1>
+
+      <%= simple_form_for @transaction do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :shipping_address %>
+        <%= f.input :card_number %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
