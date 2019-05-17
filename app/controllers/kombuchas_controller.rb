@@ -1,7 +1,6 @@
 class KombuchasController < ApplicationController
   def index
-    @kombuchas = Kombucha.all
-    authorize @kombucha
+    @kombuchas = policy_scope(Kombucha)
   end
 
   def show
