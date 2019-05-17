@@ -1,4 +1,5 @@
 class KombuchasController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @kombuchas = policy_scope(Kombucha)
   end
