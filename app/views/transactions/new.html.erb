@@ -3,7 +3,7 @@
     <div class="col-md-8 col-md-offset-2">
       <h1>Fill out your Cha-Cha Kombucha checkout form</h1>
 
-      <%= simple_form_for @transaction do |f| %>
+      <%= simple_form_for [@kombucha, @transaction] do |f| %>
         <%= f.input :first_name %>
         <%= f.input :last_name %>
         <%= f.input :shipping_address %>
