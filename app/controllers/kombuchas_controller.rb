@@ -5,6 +5,7 @@ class KombuchasController < ApplicationController
 
   def show
     @kombucha = Kombucha.find(params[:id])
+    @transaction = Transaction.new
   end
 
   def new
