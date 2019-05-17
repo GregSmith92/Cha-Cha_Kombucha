@@ -3,14 +3,14 @@ class TransactionPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-
-    def new?
-      return true
-    end
-
-    def create?
-      return true
-    end
-
   end
+
+  def new?
+    true
+  end
+
+  def create?
+    return true
+  end
+
 end
