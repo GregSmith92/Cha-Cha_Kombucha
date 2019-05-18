@@ -17,6 +17,11 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 5px;
   margin-bottom: 30px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: scale(0.95, 0.95);
 }
 
 // .card-trip > img {
