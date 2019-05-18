@@ -16,6 +16,7 @@
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 // .card-trip > img {
@@ -26,10 +27,10 @@
 
 .card-info {
   padding: 16px;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: flex-end;
-  // position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
   h2 {
     font-size: 20px;
     color: black;
@@ -41,5 +42,17 @@
     color: black;
     font-weight: lighter;
   }
+}
 
+.user {
+  position: absolute;
+  right: 16px;
+  top: -30px;
+  width: 60px;
+}
+
+.card-pricing {
+  position: absolute;
+  right: 36px;
+  top: 46px;
 }
