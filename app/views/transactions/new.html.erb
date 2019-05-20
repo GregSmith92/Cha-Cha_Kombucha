@@ -1,15 +1,21 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <h1>Fill out your Cha-Cha Kombucha checkout form</h1>
+  <div class="row justify-content-center">
+    <div class="form">
+      <div class="form-title">
+        <h1>Your Cha-Cha Kombucha checkout form</h1>
+      </div>
 
-      <%= simple_form_for [@kombucha, @transaction] do |f| %>
+      <div class="row justify-content-center">
+      <div class="form-questions">
+        <%= simple_form_for [@kombucha, @transaction] do |f| %>
         <%= f.input :first_name %>
         <%= f.input :last_name %>
         <%= f.input :shipping_address %>
         <%= f.input :card_number %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+        <%= f.button :submit, class: "btn btn-flat banner-button" %>
+        <% end %>
+      </div>
+      </div>
     </div>
   </div>
 </div>
