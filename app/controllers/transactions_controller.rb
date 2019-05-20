@@ -1,5 +1,7 @@
 class TransactionsController < ApplicationController
 
+  skip_after_action :verify_authorized, only: [:show]
+
   def new
     @transaction = Transaction.new
     @kombucha = Kombucha.find(params[:kombucha_id])
@@ -20,9 +22,12 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def transaction_params
-    params_require(:transaction).permit(:first_name, :last_name, :shipping_address, :card_number)
+    params.require(:transaction).permit(:first_name, :last_name, :shipping_address, :card_number)
   end
 end
