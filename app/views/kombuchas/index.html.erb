@@ -1,22 +1,25 @@
-  <div class="banner-content">
-    <h1>Cha-Cha Kombuchas </h1>
-    <p>Awesome kombuchas made with love</p>
-    <%= link_to "Add a kombucha", new_kombucha_path, class: "btn btn-primary btn-lg" %>
-  </div>
+<div class="banner-content">
+  <h1>Cha-Cha Kombuchas </h1>
+  <p>Awesome kombuchas made with love</p>
+  <%= link_to "Add a kombucha", new_kombucha_path, class: "btn btn-primary btn-lg" %>
 </div>
-<div class="kombucha-index">
-  <div class="row">
-  <div class="row">
-    <% @kombuchas.each do |kombucha| %>
-     <%= link_to kombucha_path(kombucha) do %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
-          <div class="card-description">
-            <h2><%= kombucha.name %></h2>
+
+
+
+<div class="cards-container">
+  <% @kombuchas.each do |booch| %>
+    <%= link_to kombucha_path(booch) do %>
+      <div class="card">
+        <%= cl_image_tag booch.photo, height: 266, width: 300, crop: :fill %>
+        <div class="card-info">
+          <div>
+            <h2><%= booch.name %></h2>
+            <p><%= booch.flavour %></p>
           </div>
-          <%= link_to "", kombucha_path(kombucha), class: 'card-link' %>
-     <% end %>
+          <h2 class="card-pricing">£<%= booch.price %></h2>
+          <%= cl_image_tag booch.photo, class: "avatar-bordered user", height: 60, width: 60, crop: :fill %>
         </div>
       </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
