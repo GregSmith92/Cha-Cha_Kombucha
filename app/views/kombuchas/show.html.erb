@@ -19,8 +19,11 @@
       <div class="row">
       <div class="row">
 
-      <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha) %>
+      <% if policy(@kombucha).edit? %>
+        <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha) %>
+        <% end %>
       <% end %>
+
     </div>
   </div>
 </div>
