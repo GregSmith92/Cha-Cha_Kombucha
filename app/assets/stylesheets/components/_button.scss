@@ -1,0 +1,24 @@
+.home-btn {
+
+}
+
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #E76D83;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #94D1BE;
+  color: white;
+}
+
+.kombucha-buttons-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}

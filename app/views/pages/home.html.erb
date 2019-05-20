@@ -4,7 +4,30 @@
     <a class="btn btn-flat banner-button" href="/kombuchas">Taste us!</a>
 </div>
 
-<% if current_user %>
-  <%= link_to "View My Kombuchas", dashboard_path, class:"btn btn-primary" %>
-<% end %>
+<div class="wrapper">
+    <div class="home-card" style="background-image: url('https://cdn-image.realsimple.com/sites/default/files/styles/rs_medium_image/public/1512053072/apple-kombucha-cocktail.jpg?itok=LbNfRXxy&1512053637')">
+    </div>
+    <div class="home-card" style="background-image: url('https://dietitiandebbie.com/wp-content/uploads/2017/06/Rasbperry-Ginger-Kombucha-Cocktails-2.jpg')">
+    </div>
+    <div class="home-card" style="background-image: url('https://www.thelittleepicurean.com/wp-content/uploads/2014/05/Honey-Paloma-Cocktail-3.jpg')">
+    </div>
+    <div class="home-card" style="background-image: url('https://i0.wp.com/www.freutcake.com/wp-content/uploads/2018/06/Kombucha-Mojito-3.jpg?fit=1200%2C1800')">
+    </div>
+  </div>
 
+<div class="container">
+  <div class="kombucha-buttons-div">
+    <% if current_user %>
+      <%= link_to "View My Kombuchas", dashboard_path, class:"btn btn-flat banner-button" %>
+    <% end %>
+  </div>
+
+  <div class="card-product">
+    <img src="https://images.unsplash.com/photo-1499638673689-79a0b5115d87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2800&q=80">
+    <div class="card-product-infos">
+      <h2>What is a Kombucha?</h2>
+      <p>Kombucha is a fermented drink made from sweetened tea and a specific culture known as a scoby. Scoby stands for ‘symbiotic culture of bacteria and yeasts’. The bacteria and yeasts convert the sugar into ethanol and acetic acid. The acetic acid is what gives kombucha its distinctive sour taste.</p>
+    </div>
+  </div>
+
+</div>
