@@ -7,7 +7,7 @@
       <p><%= booch.flavour %></p>
       <p>£<%= booch.price %></p>
       <p>Available:<%= booch.quantity %></p>
-      <%= cl_image_tag booch.photo, height: 200, width: 300, crop: :fill %>
+      <%= cl_image_tag booch.user.profile_pic, height: 200, width: 300, crop: :fill %>
     </div>
   <% end %>
 </div>
