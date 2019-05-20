@@ -3,14 +3,15 @@
     <div class="title-box">
       <h2> <%= @kombucha.name %> </h2>
       <p><%= @kombucha.flavour.capitalize %></p>
+      <p>£<%= @kombucha.price %></p>
     </div>
     <div class="booch-photo">
       <%= cl_image_tag @kombucha.photo, height: 400, width: 600, crop: :fill %>
     </div>
     <div class="show-info">
-      <p>£<%= @kombucha.price %></p>
+
       <p><%= @kombucha.rating %></p>
-      <p>Created by <%= @kombucha.user.first_name.capitalize %></p>
+      <p>Brewed by <%= @kombucha.user.first_name.capitalize %></p>
       <p><%= cl_image_tag @kombucha.user.profile_pic, class: "avatar-bordered show-avatar", height: 60, width: 60, crop: :fill %></p>
     </div>
   </div>
