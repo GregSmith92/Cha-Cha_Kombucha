@@ -1,5 +1,7 @@
 
-<h1>Welcome <%=@user.first_name%></h1>
+<div class="text-center">
+<h1> Welcome <%=@user.first_name%></h1>
+</div>
 <div class="cards-container">
   <% @kombuchas.each do |booch| %>
     <%= link_to kombucha_path(booch) do %>
