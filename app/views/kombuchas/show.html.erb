@@ -1,32 +1,44 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1><%= @kombucha.name %></h1>
-      <p>Price: <%= @kombucha.price %></p>
-      <p>Rating: <%= @kombucha.rating %></p>
-      <p>Flavour: <%= @kombucha.flavour %></p>
-      <%= cl_image_tag @kombucha.photo, height: 200, width: 300, crop: :fill %>
-     <!--  <form action="">
-      <div class="input-group">
-        <input type="submit" value="Buy this Kombucha" class="btn btn-success mt-2" style="width: 100%">
-      </form> -->
+
+<div class="show-container">
+  <div class="top-show-container">
+    <div class="title-box">
+      <h2> <%= @kombucha.name %> </h2>
+      <p><%= @kombucha.flavour.capitalize %></p>
+    </div>
+    <div class="booch-photo">
+      <%= cl_image_tag @kombucha.photo, height: 400, width: 600, crop: :fill %>
+    </div>
+    <div class="show-info">
+      <p>£<%= @kombucha.price %></p>
+      <p><%= @kombucha.rating %></p>
+      <p>Created by <%= @kombucha.user.first_name.capitalize %></p>
+      <p><%= cl_image_tag @kombucha.user.profile_pic, class: "avatar-bordered show-avatar", height: 60, width: 60, crop: :fill %></p>
+    </div>
+  </div>
+  <%= link_to "Buy this Kombucha!", new_kombucha_transaction_path(@kombucha), class: 'button-show' %>
+</div>
+
+<br>
+<br>
+
+
 
       <%= simple_form_for(@kombucha, :url =>  new_kombucha_transaction_path(kombucha_id: @kombucha.id), :method => :get) do |f| %>
-          <%= f.input :quantity %>
+          <%= f.input :quantity %> -->
 
-      <%= link_to "Buy your Cha-Cha Kombucha!", new_kombucha_transaction_path(@kombucha) %>
 
-      <div class="row">
-      <div class="row">
+        <div class="col-xs-12">
+
 
       <% if policy(@kombucha).edit? %>
         <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha) %>
         <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), :method => :delete %>
+
         <% end %>
-      <% end %>
+        </div>
 
     </div>
   </div>
-</div>
+</div> -->
 
 
