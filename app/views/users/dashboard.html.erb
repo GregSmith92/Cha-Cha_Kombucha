@@ -1,13 +1,1 @@
-<h1>Dashboard view</h1>
-<div class="cards-container">
-  <% @kombuchas.each do |k| %>
-  <div class="card">
-    <div class="card-info">
-      <h3><%= k.name %></h3>
-      <p><%= k.flavour %></p>
-      <h2 class="card-pricing">£<%= k.price %></h2>
-    </div>
-      <%= cl_image_tag k.user.profile_pic, class: "avatar-bordered-dashboard", height: 60, width: 60, crop: :fill %>
-      <% end %>
-  </div>
-</div>
+<h1>Welcome <%=@user.first_name%></h1>
