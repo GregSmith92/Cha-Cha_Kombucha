@@ -27,13 +27,13 @@
           <%= f.input :quantity %> -->
 
 
-      <div class="row">
-      <div class="row">
+        <div class="col-xs-12">
 
-      <% if policy(@kombucha).edit? %>
-        <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha) %>
+        <% if policy(@kombucha).edit? %>
+          <%= link_to "Edit your Kombucha!", edit_kombucha_path(@kombucha) %>
+          <% end %>
         <% end %>
-      <% end %>
+        </div>
 
     </div>
   </div>
