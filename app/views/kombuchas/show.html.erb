@@ -21,6 +21,7 @@
 
       <% if policy(@kombucha).edit? %>
         <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha) %>
+        <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), :method => :delete %>
         <% end %>
       <% end %>
 
