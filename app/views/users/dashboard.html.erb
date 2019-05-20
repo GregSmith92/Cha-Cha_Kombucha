@@ -1,1 +1,20 @@
+
 <h1>Welcome <%=@user.first_name%></h1>
+<div class="cards-container">
+  <% @kombuchas.each do |booch| %>
+    <%= link_to kombucha_path(booch) do %>
+      <div class="card">
+        <%= cl_image_tag booch.photo, height: 266, width: 300, crop: :fill %>
+        <div class="card-info">
+          <div>
+            <h2><%= booch.name %></h2>
+            <p><%= booch.flavour %></p>
+          </div>
+          <h2 class="card-pricing">£<%= booch.price %></h2>
+          <%= cl_image_tag booch.user.profile_pic, class: "avatar-bordered user", height: 60, width: 60, crop: :fill %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
