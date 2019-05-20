@@ -17,7 +17,7 @@
             <p><%= booch.flavour %></p>
           </div>
           <h2 class="card-pricing">£<%= booch.price %></h2>
-          <%= cl_image_tag booch.photo, class: "avatar-bordered user", height: 60, width: 60, crop: :fill %>
+          <%= cl_image_tag booch.user.profile_pic, class: "avatar-bordered user", height: 60, width: 60, crop: :fill %>
         </div>
       </div>
     <% end %>

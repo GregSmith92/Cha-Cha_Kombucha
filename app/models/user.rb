@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :kombuchas
   has_many :transactions
+  mount_uploader :profile_pic, PhotoUploader
 end
