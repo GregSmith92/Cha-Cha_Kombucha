@@ -12,6 +12,7 @@ class KombuchasController < ApplicationController
   def show
     @kombucha = Kombucha.find(params[:id])
     @transaction = Transaction.new
+    @rating = params[:jsrating]
     authorize @kombucha
   end
 
@@ -52,6 +53,10 @@ class KombuchasController < ApplicationController
     authorize @kombucha
     @kombucha.destroy
     redirect_to kombucha_path(@cocktail)
+  end
+
+  def add_rating
+    @kombucha.rating = window.rating
   end
 
   private
