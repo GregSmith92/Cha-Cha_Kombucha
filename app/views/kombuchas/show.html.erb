@@ -1,8 +1,10 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 <div class="show-container">
   <div class="top-show-container">
     <div class="title-box">
       <h2> <%= @kombucha.name %> </h2>
       <p><%= @kombucha.flavour.capitalize %></p>
+      <p> <%= @kombucha.description %> </p>
       <p>£<%= @kombucha.price %></p>
     </div>
     <div class="booch-photo">
@@ -33,11 +35,18 @@
 
         <% end %>
 
-       <!--  <div class="col-xs-12"> -->
-
-
-  <!--       </div>
-
-    </div>
+<div class="slider-div">
+  <div id="slider">
+    <label for="range" :style="{color: getHappinessColor}">{{val}}</label>
+    <input v-model="val" id="range" type="range" min=0 max=100>
+  <div class="slider outer">
+    <label :style="{width: `${val}%`, borderRadius: greaterThanFifty}" for="range" aria-hidden="true" class="slider inner">
+      <span :style="{right: getPlacement}">{{getHappiness}}</span>
+    </label>
   </div>
-</div> -->
+</div>
+
+  <form>
+    <input id="ratingform" type="integer" disabled="true" style="border: none; background-color: white;"><br>
+  <input type="submit" value="Rate me" class="btn btn-info" id="sliderbtn">
+</form>
