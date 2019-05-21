@@ -27,3 +27,18 @@
 .navbar-collapse {
   justify-content: flex-end;
 }
+
+.fa .fa-search {
+  color: #E76D83 !important;
+}
+.fa::before {
+  color: #E76D83 !important;
+  padding: 8px;
+  margin-right: 1rem;
+}
+.fa:hover {
+  text-decoration: none;
+}
+.navbar-nav {
+  align-items: center;
+}

@@ -5,8 +5,8 @@ class Kombucha < ApplicationRecord
   # validates :photo, presence: true
   mount_uploader :photo, PhotoUploader
   include PgSearch
-  pg_search_scope :search_by_name_and_flavour,
-                  against: [:name, :flavour],
+  pg_search_scope :search_by_name_flavour_description,
+                  against: [:name, :flavour, :description],
                   using: {
                     tsearch: { prefix: true }
                   }

@@ -51,8 +51,6 @@ const slider = new Vue ({
   }
 });
 
-  let jsrating = document.getElementById('slider').firstChild.innerHTML;
-  console.log(jsrating)
   // jsrating = "9999"
 
 
