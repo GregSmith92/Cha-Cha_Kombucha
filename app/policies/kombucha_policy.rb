@@ -21,14 +21,9 @@ class KombuchaPolicy < ApplicationPolicy
     true
   end
 
-  def update?
+  def edit?
     true
   end
-
-  def edit?
-    record.user == user
-  end
-
 
   def update?
     edit?

@@ -1,7 +1,8 @@
 class KombuchasController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :update]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @kombuchas = policy_scope(Kombucha)
+    @kombuchas = @kombuchas.search_by_name_and_flavour(params[:query]) if params[:query]
   end
 
   def all_kombuchas
@@ -55,9 +56,27 @@ class KombuchasController < ApplicationController
     redirect_to kombucha_path(@cocktail)
   end
 
+  def add_rating
+    @kombucha.rating = window.rating
+  end
+
+  def something
+    @kombucha = Kombucha.find(params[:id])
+    redirect_to
+    if @kombucha.update(rating_params)
+      redirect_to @kombucha, notice: 'Cha-cha Kombucha successfully updated'
+    else
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   private
 
   def kombucha_params
-    params.require(:kombucha).permit(:name, :price, :rating, :flavour, :photo)
+    params.require(:kombucha).permit(:name, :price, :rating, :flavour, :photo, :description)
+  end
+
+  def rating_params
+    params.require(:kombucha).permit(:rating)
   end
 end
