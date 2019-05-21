@@ -17,7 +17,10 @@
       <p><%= cl_image_tag @kombucha.user.profile_pic, class: "avatar-bordered show-avatar", height: 60, width: 60, crop: :fill %></p>
     </div>
   </div>
-  <%= link_to "Buy this Kombucha!", new_kombucha_transaction_path(@kombucha), class: 'button-show' %>
+
+  <% unless @kombucha.user == current_user %>
+    <%= link_to "Buy this Kombucha!", new_kombucha_transaction_path(@kombucha), class: 'button-show' %>
+  <% end %>
 </div>
 
 <br>
