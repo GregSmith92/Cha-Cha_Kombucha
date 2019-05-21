@@ -1,5 +1,5 @@
 class KombuchasController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :update]
   def index
     @kombuchas = policy_scope(Kombucha)
   end
@@ -53,10 +53,6 @@ class KombuchasController < ApplicationController
     authorize @kombucha
     @kombucha.destroy
     redirect_to kombucha_path(@cocktail)
-  end
-
-  def add_rating
-    @kombucha.rating = window.rating
   end
 
   private

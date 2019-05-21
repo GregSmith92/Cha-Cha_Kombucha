@@ -1,3 +1,5 @@
 import "bootstrap";
-import { slider } from '../components/rating';
-slider();
+import { sliderMaker } from '../components/rating';
+document.querySelectorAll('.slider-select').forEach(slider => {
+  sliderMaker(slider.id)
+})
