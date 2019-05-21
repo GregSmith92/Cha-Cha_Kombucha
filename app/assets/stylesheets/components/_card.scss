@@ -111,3 +111,48 @@
   padding: 16px;
 
 }
+
+.cards-container-trans {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 60px;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.card-trans {
+  width: 300px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  transition: 0.4s;
+}
+
+.card-trans:hover {
+  transform: scale(0.95, 0.95);
+  box-shadow: 0 0 15px rgba(0,0,0,0.25);
+}
+
+.card-info-trans {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  h2 {
+    font-size: 20px;
+    color: black;
+    }
+
+  p {
+    font-size: 16px;
+    opacity: 0.2;
+    color: black;
+    font-weight: lighter;
+  }
+}
