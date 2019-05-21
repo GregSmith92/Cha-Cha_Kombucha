@@ -1,4 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 <div class="show-container">
   <div class="top-show-container">
     <div class="title-box">
@@ -35,7 +34,7 @@
   <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), class: "btn btn-flat banner-button", :method => :delete %>
 
 <% end %>
-
+<script> slider(); </script>
 <div class="slider-div">
   <div id="slider">
     <label for="range" :style="{color: getHappinessColor}">{{val}}</label>

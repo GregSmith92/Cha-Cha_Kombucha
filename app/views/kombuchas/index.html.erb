@@ -28,7 +28,7 @@
 </div>
 
 
-<div class="search-form-holder">
+<div class="search-form-holder" id="something">
 <%= form_tag kombuchas_path, method: :get, class: "search-form" do %>
     <%= text_field_tag :query,
       params[:query],
@@ -40,3 +40,8 @@
     %>
 <% end %>
 </div>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  )};
+</script>

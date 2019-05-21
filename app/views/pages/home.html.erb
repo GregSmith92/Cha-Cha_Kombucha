@@ -29,5 +29,16 @@
       <p style="font-size: 20px">Kombucha is a fermented drink made from sweetened tea and a specific culture known as a scoby. Scoby stands for ‘symbiotic culture of bacteria and yeasts’. The bacteria and yeasts convert the sugar into ethanol and acetic acid. The acetic acid is what gives kombucha its distinctive sour taste.</p>
     </div>
   </div>
-
+</div>
+<div class="search-form-holder" id="something">
+<%= form_tag kombuchas_path, method: :get, class: "search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-input search-field",
+      placeholder: "Search"
+    %>
+    <%= submit_tag "Find a Booch",
+    class: "btn btn-flat search-button banner-button"
+    %>
+<% end %>
 </div>
