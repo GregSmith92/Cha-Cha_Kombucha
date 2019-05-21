@@ -1,0 +1,82 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+  color: gray;
+}
+
+.slider-div {
+  min-height: 40vh;
+  width: 50vw;
+  display: flex;
+  place-items: center;
+  margin: 0;
+  background: white;
+}
+
+#slider {
+  --roundness: 20px;
+  padding: 4vw;
+  display: grid;
+  justify-content: stretch;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+
+  input {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    height: calc(var(--roundness) * 2);
+    cursor: pointer;
+    &:focus + .outer {
+      outline: 1px dashed orange;
+    }
+  }
+
+  & > label {
+    width: 100%;
+    margin: auto;
+    font-size: 1.5em;
+    padding: 0 0 .5em;
+  }
+
+  .outer {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    width: 100%;
+    border-radius: var(--roundness);
+    margin: auto;
+    height: var(--roundness);
+    background: gray;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+  }
+
+  label.inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    background: linear-gradient(to left, yellow, orange);
+    border-top-left-radius: var(--roundness)!important;
+    border-bottom-left-radius: var(--roundness)!important;
+    position: absolute;
+    transition: all .3s cubic-bezier(0.5, 0.4, .2, 1);
+    text-align: right;
+    font-size: calc(var(--roundness) * 2);
+    line-height: 1;
+    span {
+      position: absolute;
+      right: -2px;
+      top: calc(50% - var(--roundness) * 2);
+      top: calc(var(--roundness) * -.3);
+      transition: inherit;
+    }
+  }
+
+}
