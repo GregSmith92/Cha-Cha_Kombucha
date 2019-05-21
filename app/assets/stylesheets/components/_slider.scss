@@ -3,23 +3,34 @@
   color: gray;
 }
 
+.slider-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-form {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .slider-div {
-  min-height: 40vh;
-  width: 50vw;
+  width: auto;
   display: flex;
   place-items: center;
-  margin: 0;
+  margin: auto;
   background: white;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #slider {
   --roundness: 20px;
-  padding: 4vw;
+  padding: 0 auto;
   display: grid;
   justify-content: stretch;
-  width: 100%;
+  width: auto;
   max-width: 600px;
-  margin: auto;
+  // margin: auto;
 
   input {
     grid-row: 2 / 3;
