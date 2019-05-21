@@ -20,6 +20,9 @@
 
   <% unless @kombucha.user == current_user %>
     <%= link_to "Buy this Kombucha!", new_kombucha_transaction_path(@kombucha), class: 'button-show' %>
+    <%= simple_form_for(@kombucha, :url =>  new_kombucha_transaction_path(kombucha_id: @kombucha.id), :method => :get) do |f| %>
+      <%= f.input :quantity %>
+    <% end %>
   <% end %>
 </div>
 
@@ -27,16 +30,11 @@
 <br>
 
 
+<% if policy(@kombucha).edit? %>
+  <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha), class: "btn btn-flat banner-button" %>
+  <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), class: "btn btn-flat banner-button", :method => :delete %>
 
-      <%= simple_form_for(@kombucha, :url =>  new_kombucha_transaction_path(kombucha_id: @kombucha.id), :method => :get) do |f| %>
-          <%= f.input :quantity %>
-                <% end %>
-
-      <% if policy(@kombucha).edit? %>
-        <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha), class: "btn btn-flat banner-button" %>
-        <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), class: "btn btn-flat banner-button", :method => :delete %>
-
-        <% end %>
+<% end %>
 
 <div class="slider-div">
   <div id="slider">
