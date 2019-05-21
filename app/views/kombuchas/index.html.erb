@@ -25,3 +25,17 @@
     <% end %>
   <% end %>
 </div>
+
+
+<div class="search-form-holder">
+<%= form_tag kombuchas_path, method: :get, class: "search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-input search-field",
+      placeholder: "Search"
+    %>
+    <%= submit_tag "Find a Booch",
+    class: "btn btn-flat search-button banner-button"
+    %>
+<% end %>
+</div>
