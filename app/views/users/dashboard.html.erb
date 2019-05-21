@@ -2,6 +2,7 @@
 <div class="text-center">
 <h1> Welcome <%=@user.first_name%></h1>
 </div>
+
 <div class="cards-container">
   <% @kombuchas.each do |booch| %>
     <%= link_to kombucha_path(booch) do %>
@@ -20,4 +21,25 @@
   <% end %>
 </div>
 
+<div class="text-center">
+<h1> <%=@user.first_name%>'s past transactions </h1>
+</div>
+
+<div class="cards-container-trans">
+  <% @user.transactions.each do |trans| %>
+    <div class="card-trans">
+      <%= cl_image_tag trans.kombucha.photo, height: 266, width: 300, crop: :fill %>
+      <div class="card-info-trans">
+        <div>
+        <h2> <%=trans.kombucha.name%> was sold to: </h2>
+        <p><%= trans.first_name %></p>
+        <p><%= trans.last_name %></p>
+        <p><%= trans.shipping_address %></p>
+        </div>
+      <h2 class="card-pricing">£<%= trans.kombucha.price %></h2>
+      <%= cl_image_tag trans.user.profile_pic, class: "avatar-bordered user", height: 60, width: 60, crop: :fill %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
