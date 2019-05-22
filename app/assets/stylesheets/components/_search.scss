@@ -2,6 +2,24 @@
   display: flex;
   justify-content: center;
 }
+
+.search-form-holder-home {
+  display:flex
+}
+
+.search-form-home {
+
+}
+
+.search-input-home {
+  border: 1px solid #E76D83;
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 10px 10px 10px 10px;
+  height: 42px;
+  margin: 30px 30px;
+}
+
 .search-form {
   display: flex;
   align-items: center;
@@ -20,4 +38,3 @@
 .search-button {
   border-radius: 0px 4px 4px 0px;
 }
-
