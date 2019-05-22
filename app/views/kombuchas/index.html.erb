@@ -2,11 +2,27 @@
   <div class="text-center">
   <h1>Cha-Cha Kombuchas </h1>
   <p>Awesome kombuchas made with love</p>
-  <%= link_to "Add a kombucha", new_kombucha_path, class: "btn btn-flat banner-button" %>
+  <%= link_to "Add a kombucha", new_kombucha_path, class: "btn btn-flat banner-button", id: "addakombucha" %>
 </div>
 </div>
 
+<div class="search-form-holder" id="something">
+<%= form_tag kombuchas_path, method: :get, class: "search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-input search-field",
+      placeholder: "Search"
+    %>
+    <%= submit_tag "Find a Booch",
+    class: "btn btn-flat search-button banner-button"
+    %>
+<% end %>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]');
+</script>
 
 <div class="cards-container">
   <% @kombuchas.each do |booch| %>
@@ -28,20 +44,3 @@
 </div>
 
 
-<div class="search-form-holder" id="something">
-<%= form_tag kombuchas_path, method: :get, class: "search-form" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "search-input search-field",
-      placeholder: "Search"
-    %>
-    <%= submit_tag "Find a Booch",
-    class: "btn btn-flat search-button banner-button"
-    %>
-<% end %>
-</div>
-<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
-<script>
-  var scroll = new SmoothScroll('a[href*="#"]');
-</script>
