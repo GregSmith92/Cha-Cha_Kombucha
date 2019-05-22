@@ -2,17 +2,13 @@
     <div class="nav-container">
 
       <div class="nav-left nav-item">
-<% if  current_page?('/') || current_page?('/kombuchas') %>
-        <div class="search-form-holder-home">
-          <%= form_tag kombuchas_path, method: :get, class: "search-form-home" do %>
-          <%= text_field_tag :query,
-          params[:query],
-          class: "search-input-home",
-          placeholder: "Find a Booch"
-          %>
+        <% if  current_page?('/') || current_page?('/kombuchas') %>
+          <div class="search-form-holder-home">
+            <%= form_tag kombuchas_path, method: :get, class: "search-form-home" do %>
+              <%= text_field_tag :query, params[:query], class: "search-input-home", placeholder: "Find a Booch"%>
+            <% end %>
+          </div>
          <% end %>
-        </div>
-<% end %>
       </div>
 
       <div class="nav-img nav-item">
