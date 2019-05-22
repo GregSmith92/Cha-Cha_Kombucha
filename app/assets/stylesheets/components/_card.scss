@@ -27,7 +27,10 @@
   // cursor: vertical-text;
   cursor: url(Beerdesk.png), auto;
 }
-
+.bw {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
 
 
 // .card-trip > img {
