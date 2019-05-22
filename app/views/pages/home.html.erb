@@ -42,3 +42,20 @@
     %>
 <% end %>
 </div>
+
+<div class="row justify-content-center">
+<button id="clickme" class="btn btn-flat banner-button">
+  Thirsty? Click me!
+</button>
+<script>
+  const button = document.querySelector('#clickme');
+  const audio = new Audio('<%= asset_path "sound.mp3" %>');
+
+  button.addEventListener('click', (e) => {
+    e.target.classList.add('disabled');
+    e.target.innerText = 'Cha-Cha!';
+    audio.play();
+  });
+
+</script>
+</div>
