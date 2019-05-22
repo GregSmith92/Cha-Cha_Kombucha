@@ -24,7 +24,10 @@
   transform: scale(0.95, 0.95);
   box-shadow: 0 0 15px rgba(0,0,0,0.25);
 }
-
+.bw {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
 
 
 // .card-trip > img {
