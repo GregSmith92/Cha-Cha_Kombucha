@@ -16,7 +16,8 @@
       <p><%= cl_image_tag @kombucha.user.profile_pic, class: "avatar-bordered show-avatar", height: 60, width: 60, crop: :fill %></p>
     </div>
   </div>
-
+</div>
+<div class="buy-container">
   <% unless @kombucha.user == current_user %>
     <%= link_to "Buy this Kombucha!", new_kombucha_transaction_path(@kombucha), class: 'button-show' %>
     <%= simple_form_for(@kombucha, :url =>  new_kombucha_transaction_path(kombucha_id: @kombucha.id), :method => :get) do |f| %>
@@ -28,21 +29,22 @@
 <br>
 <br>
 
+<div class="d-flex justify-content-around">
+  <div>
 
-<% if policy(@kombucha).edit? %>
-  <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha), class: "btn btn-flat banner-button" %>
-  <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), class: "btn btn-flat banner-button", :method => :delete %>
-<% end %>
-
-
-  <%= simple_form_for(@kombucha, :url =>  new_kombucha_transaction_path(kombucha_id: @kombucha.id), :method => :get) do |f| %>
-    <%= f.input :quantity %>
-  <% end %>
+  </div>
 
   <% if policy(@kombucha).edit? %>
     <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha), class: "btn btn-flat banner-button" %>
-    <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), class: "btn btn-flat banner-button", :method => :delete %>
+
+  <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), class: "btn btn-flat banner-button", :method => :delete %>
+  <div>
+
+  </div>
 
   <% end %>
+</div>
+
+
 
 
