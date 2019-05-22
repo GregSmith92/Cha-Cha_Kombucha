@@ -1,4 +1,4 @@
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 <div class="text-center">
 <h1> Welcome <%=@user.first_name%></h1>
 </div>
@@ -32,13 +32,33 @@
       <%= cl_image_tag trans.kombucha.photo, height: 266, width: 300, crop: :fill %>
       <div class="card-info-trans">
         <div>
-        <h2> <%=trans.kombucha.name%> sold to: </h2>
-        <p><%= trans.first_name %></p>
-        <p><%= trans.last_name %></p>
-        <p><%= trans.shipping_address %></p>
+          <h2> <%=trans.kombucha.name%> was sold to: </h2>
+          <p><%= trans.first_name %></p>
+          <p><%= trans.last_name %></p>
+          <p><%= trans.shipping_address %></p>
         </div>
-      <h2 class="card-pricing">£<%= trans.kombucha.price %></h2>
-      <%= cl_image_tag trans.user.profile_pic, class: "avatar-bordered user", height: 60, width: 60, crop: :fill %>
+        <h2 class="card-pricing">£<%= trans.kombucha.price %></h2>
+        <%= cl_image_tag trans.user.profile_pic, class: "avatar-bordered user", height: 60, width: 60, crop: :fill %>
+      </div>
+      <div class="slider-container">
+        <div class="slider-div">
+          <div class="slider-select" id="slider-<%= trans.id %>">
+            <label for="range" :style="{color: getHappinessColor}">{{val}}</label>
+            <input v-model="val" id="range" type="range" min=0 max=100>
+            <div class="slider outer">
+              <label :style="{width: `${val}%`, borderRadius: greaterThanFifty}" for="range" aria-hidden="true" class="slider inner">
+                <span :style="{right: getPlacement}">{{getHappiness}}</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="slider-form">
+          <%= simple_form_for(trans.kombucha) do |f| %>
+            <%= f.input :rating, as: :hidden, input_html: { id: "slider-#{trans.id}-form"  } %>
+            <%= f.button :submit, class: 'btn btn-info sliderbtn' %>
+          <% end %>
+          </form>
+        </div>
       </div>
     </div>
   <% end %>
