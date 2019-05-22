@@ -32,21 +32,17 @@
 <% if policy(@kombucha).edit? %>
   <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha), class: "btn btn-flat banner-button" %>
   <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), class: "btn btn-flat banner-button", :method => :delete %>
-
 <% end %>
-<script> slider(); </script>
-<div class="slider-div">
-  <div id="slider">
-    <label for="range" :style="{color: getHappinessColor}">{{val}}</label>
-    <input v-model="val" id="range" type="range" min=0 max=100>
-  <div class="slider outer">
-    <label :style="{width: `${val}%`, borderRadius: greaterThanFifty}" for="range" aria-hidden="true" class="slider inner">
-      <span :style="{right: getPlacement}">{{getHappiness}}</span>
-    </label>
-  </div>
-</div>
 
-  <form>
-    <input id="ratingform" type="integer" disabled="true" style="border: none; background-color: white;"><br>
-  <input type="submit" value="Rate me" class="btn btn-info" id="sliderbtn">
-</form>
+
+  <%= simple_form_for(@kombucha, :url =>  new_kombucha_transaction_path(kombucha_id: @kombucha.id), :method => :get) do |f| %>
+    <%= f.input :quantity %>
+  <% end %>
+
+  <% if policy(@kombucha).edit? %>
+    <%= link_to "Edit your Kombucha", edit_kombucha_path(@kombucha), class: "btn btn-flat banner-button" %>
+    <%= link_to "Delete your Kombucha", kombucha_path(@kombucha), class: "btn btn-flat banner-button", :method => :delete %>
+
+  <% end %>
+
+
