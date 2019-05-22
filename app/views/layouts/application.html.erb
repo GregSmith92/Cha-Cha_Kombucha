@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <div class="background">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <title>Cha Cha Kombucha</title>
     <%= csrf_meta_tags %>
@@ -17,6 +16,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <div class="background">
     <%= render "shared/navbar" %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
@@ -24,6 +24,19 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 
+    <div class="social-media">
+  <p>Follow us on social media!</p>
+  <ul class="list-inline">
+
+      <a href="https://www.facebook.com/">
+        <i class="fab fa-facebook-f"></i> </i>
+      </a>
+      <a href="https://www.linkedin.com/">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.instagram.com/">
+        <i class="fab fa-instagram"></i>
+        </div>
+      </div>
   </body>
-</div>
 </html>
