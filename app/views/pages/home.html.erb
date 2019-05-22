@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.pharmaca.com/projectwellness/wp-content/uploads/2017/12/Cocktails-1050x550.jpg);">
     <h1>Ready to Cha Cha Kombucha?</h1>
     <p>Spice up your life with the best drink in the world!</p>
-    <a class="btn btn-flat banner-button" href="/kombuchas">Taste us!</a>
+    <a class="btn btn-flat banner-button" href="/kombuchas">Shop Now!</a>
 </div>
 
 <div class="wrapper">
@@ -29,5 +29,16 @@
       <p style="font-size: 20px">Kombucha is a fermented drink made from sweetened tea and a specific culture known as a scoby. Scoby stands for ‘symbiotic culture of bacteria and yeasts’. The bacteria and yeasts convert the sugar into ethanol and acetic acid. The acetic acid is what gives kombucha its distinctive sour taste.</p>
     </div>
   </div>
-
+</div>
+<div class="search-form-holder" id="something">
+<%= form_tag kombuchas_path, method: :get, class: "search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-input search-field",
+      placeholder: "Search"
+    %>
+    <%= submit_tag "Find a Booch",
+    class: "btn btn-flat search-button banner-button"
+    %>
+<% end %>
 </div>

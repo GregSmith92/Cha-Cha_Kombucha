@@ -57,3 +57,4 @@ const sliderMaker = (el) => {
  export { sliderMaker }
 
 
+

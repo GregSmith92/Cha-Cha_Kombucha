@@ -1,0 +1,23 @@
+.search-form-holder {
+  display: flex;
+  justify-content: center;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+
+.search-input {
+  border: 1px solid #E76D83;
+  color: black;
+  padding: 8px 24px;
+  border-radius: 4px 0px 0px 4px;
+  background: #fff;
+  height: 42px;
+}
+
+.search-button {
+  border-radius: 0px 4px 4px 0px;
+}
+

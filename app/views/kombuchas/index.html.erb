@@ -17,6 +17,7 @@
           <div>
             <h2><%= booch.name %></h2>
             <p><%= booch.flavour %></p>
+            <p> <%= booch.description %> </p>
           </div>
           <h2 class="card-pricing">£<%= booch.price %></h2>
           <%= cl_image_tag booch.user.profile_pic, class: "avatar-bordered user", height: 60, width: 60, crop: :fill %>
@@ -25,3 +26,22 @@
     <% end %>
   <% end %>
 </div>
+
+
+<div class="search-form-holder" id="something">
+<%= form_tag kombuchas_path, method: :get, class: "search-form" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-input search-field",
+      placeholder: "Search"
+    %>
+    <%= submit_tag "Find a Booch",
+    class: "btn btn-flat search-button banner-button"
+    %>
+<% end %>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]');
+</script>

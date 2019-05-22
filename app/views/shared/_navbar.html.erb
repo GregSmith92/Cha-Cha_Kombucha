@@ -8,14 +8,21 @@
   </button>
   <div class="collapse navbar-collapse" id="main-navigation">
     <ul class="navbar-nav">
+      <li>
+        <a data-scroll href="#something" class="fa fa-search"></a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/">Home</a>
       </li>
+
       <li class="nav-item">
+        <% if !current_user.nil? %>
+        <%= link_to "Logout", destroy_user_session_path, class: 'nav-link', method: :delete %>
+        <% else %>
         <%= link_to "Login", new_user_session_path, class: 'nav-link' %>
         <!-- <a class="nav-link" href="#">Login</a> -->
+        <% end %>
       </li>
-        <%= link_to "Logout", destroy_user_session_path, class: 'nav-link', method: :delete %>
     </ul>
   </div>
 </nav>

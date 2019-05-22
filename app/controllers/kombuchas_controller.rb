@@ -2,7 +2,7 @@ class KombuchasController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @kombuchas = policy_scope(Kombucha)
-    @kombuchas = @kombuchas.search_by_name_and_flavour(params[:query]) if params[:query]
+    @kombuchas = @kombuchas.search_by_name_flavour_description(params[:query]) if params[:query]
   end
 
   def all_kombuchas
