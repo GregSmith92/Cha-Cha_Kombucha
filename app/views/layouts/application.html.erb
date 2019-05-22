@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <div class="background">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +16,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <div class="background">
     <%= render "shared/navbar" %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
@@ -35,6 +35,7 @@
       </a>
       <a href="https://www.instagram.com/">
         <i class="fab fa-instagram"></i>
+        </div>
+      </div>
   </body>
-</div>
 </html>

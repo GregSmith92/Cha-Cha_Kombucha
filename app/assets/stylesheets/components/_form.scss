@@ -20,12 +20,16 @@
   align-items: center;
   justify-content: center;
   width: 488px;
-  height: 488px;
+  height: 497px;
   padding-top: 129px;
   border: 4px solid #E76D83;
   border-radius: 20%;
   background: #94D1BE;
-  box-shadow: 10px 10px 0 #E76D83;
+  box-shadow: 1px 1px 0 #E76D83;
+  transition: box-shadow ease 1s;
+  &:hover {
+    box-shadow: 15px 15px 0 #E76D83;
+  }
 
 }
 
