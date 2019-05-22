@@ -55,7 +55,7 @@
         <div class="slider-form">
           <%= simple_form_for(trans.kombucha) do |f| %>
             <%= f.input :rating, as: :hidden, input_html: { id: "slider-#{trans.id}-form"  } %>
-            <%= f.button :submit, class: 'btn btn-info sliderbtn' %>
+            <%= f.button :submit, 'Rate your purchase!', class: 'btn btn-info sliderbtn' %>
           <% end %>
           </form>
         </div>
