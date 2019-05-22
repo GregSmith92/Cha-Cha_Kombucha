@@ -11,7 +11,7 @@
 }
 
 .show-container {
-  width: 100vw;
+  width: 80vw;
 }
 
 .top-show-container {
@@ -48,8 +48,7 @@
     display: flex;
     justify-content: flex-end;
     position: relative;
-    width: 80vw;
-    margin-bottom: 50px;
+    width: 80%;
     margin-top: 40px;
     padding-right: 30px;
     ul {
@@ -76,10 +75,19 @@
   padding: 10px 20px;
   font-size: 30px;
   margin-left: 55px;
-  a:hover {
-    text-decoration: none;
-    color: white;
-  }
+  margin-right: 10px;
+}
+.button-show:hover {
+  text-decoration: none;
+  color: #393D3F;
+  box-shadow: 5px 5px 0 #94D1BE;
+  color: #94D1BE;
+  cursor: url(Love-Eyes.png), auto;
 }
 
+.buy-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
 
